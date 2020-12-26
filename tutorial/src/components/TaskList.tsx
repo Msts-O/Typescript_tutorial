@@ -3,7 +3,7 @@ import TaskItem  from "./TaskItem"
 import { Task } from "./Types"
 
 type Props = {
-    tasks: task[]
+    tasks: Task[]
     setTasks: React.Dispatch<React.SetStateAction<Task[]>>
 }
 
@@ -28,12 +28,11 @@ const TaskList: React.FC<Props> = ({ tasks, setTasks}) => {
             {
                 tasks.length <= 0 ? '登録されたTODOはありません。' :
                     <ul className="task-list">
-                        { tasks.map( task => (
+                        { tasks.map(task => (
                             <TaskItem
-                                key={task.id}
                                 task={task}
-                                handleDelete={handleDelete}
                                 handleDone={handleDone}
+                                handleDelete={handleDelete}
                             />
                         )) }
                     </ul>

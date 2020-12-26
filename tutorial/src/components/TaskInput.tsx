@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useState } from 'react'
 import { Task } from "./Types";
 
-type props ={
+type Props ={
     setTasks: React.Dispatch<React.SetStateAction<Task[]>>
-    task: Task[]
+    tasks: Task[]
 }
 
-const TaskInput: React.FC<Props> = ({ setTasks, tasks}) => {
-    const [ inputTitle, setInputTitle ] = useState<string>('')
-    const [ count, setCount ] = useState<number>(tasks.length + 1)
+const TaskInput: React.FC<Props> = ({ tasks, setTasks}) => {
+    const [ inputTitle, setInputTitle ] = useState('')
+    const [ count, setCount ] = useState(tasks.length + 1)
 
    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputTitle(e.target.value)
    }　　　
-   const handlesubmit = () => {}
+   const handleSubmit = () => {
     setCount(count+1)
         const newTask: Task = {
           id: count,
