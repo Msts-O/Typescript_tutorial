@@ -1,10 +1,13 @@
 version: '3'
+
 services:
-  nextjs:
-    build: ./docker/
-    container_name: Typescript-tutorial
+  frontend:
+    build: .
+    environment:
+      - NODE_ENV=development
     volumes:
-      - ./app:/usr/src/app
-    command: "yarn dev"
+      - ./:/usr/src/tutorial
+    command: sh -c 'cd tutorial && npm start'
     ports:
-      - "4001:3000"
+      - '3005:3000'
+    tty: true
