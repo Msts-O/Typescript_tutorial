@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Msts-O/Typescript_tutorial#readme",
   "dependencies": {
-    "create-react-app": "^4.0.1"
+    "create-react-app": "^4.0.1",
+    "firebase": "^8.2.1",
+    "firebase-tools": "^9.1.0"
   }
 }
