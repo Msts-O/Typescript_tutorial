@@ -1,1 +1,5 @@
-# Typescript_tutorial
+Typescript_tutorial
+
+Built with
+
+Docker・Firebase
